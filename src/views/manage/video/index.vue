@@ -48,7 +48,14 @@ export default {
       },
       addFlag: true,
       coverFlag: false,
-      newCover: null
+      newCover: null,
+      rules: {
+        director: [{
+          message: '请输入导演',
+          trigger: 'blur',
+          required: true
+        }]
+      }
     }
   },
   methods: {
@@ -322,6 +329,7 @@ export default {
     >
       <el-form
           ref="form"
+          :rules="rules"
           :model="addInfo">
         <el-form-item label="影视名称">
           <el-input v-model="addInfo.videoTitle"></el-input>
@@ -393,7 +401,7 @@ export default {
             label="上传封面">
           <el-upload
               class="avatar-uploader"
-              action="http://localhost:9527/file/upload"
+              :action= "path + '/file/upload'"
               :show-file-list="false"
               :on-success="updateCoverSuccess">
             <img v-if="newCover" :src="newCover" class="avatar">

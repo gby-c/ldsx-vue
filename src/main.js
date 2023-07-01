@@ -12,6 +12,7 @@ Vue.config.productionTip = false
 
 axios.defaults.baseURL = 'http://localhost:9527'
 Vue.prototype.$http = axios;
+Vue.prototype.path = 'http://localhost:9527'
 
 new Vue({
     router,

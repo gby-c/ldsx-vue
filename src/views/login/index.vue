@@ -134,8 +134,8 @@ export default {
 }
 
 .user-card {
-  height: 42%;
-  width: 30%;
+  height: 350px;
+  width: 500px;
   background-color: rgba(255, 255, 255, 0.2);
 }
 
